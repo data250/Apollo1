@@ -7,6 +7,10 @@ public class Apollo1 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.print("DUPA");
+		GlownaBaza baza = new GlownaBaza();
+		baza.createTables();
+		
 
 	}
 

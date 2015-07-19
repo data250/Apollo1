@@ -1,0 +1,386 @@
+{
+    "type": "database",
+    "name": "GlownaBaza",
+    "objects": [
+        {
+            "type": "table",
+            "database": null,
+            "name": "MagazynProdukt",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE MagazynProdukt (id_magazyn INTEGER REFERENCES Magazyn (id), id_produkt INTEGER REFERENCES Produkt (id), cena DOUBLE, podatek INTEGER, typ VARCHAR)",
+            "columns": [
+                {
+                    "name": "id_magazyn",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Magazyn (id)"
+                        }
+                    ]
+                },
+                {
+                    "name": "id_produkt",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Produkt (id)"
+                        }
+                    ]
+                },
+                {
+                    "name": "cena",
+                    "type": "DOUBLE"
+                },
+                {
+                    "name": "podatek",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "typ",
+                    "type": "VARCHAR"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Faktura",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Faktura (id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, id_kontrahent INTEGER REFERENCES Kontrahenci (id) NOT NULL, numer_faktury VARCHAR)",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT "
+                        },
+                        {
+                            "type": "UNIQUE",
+                            "definition": "UNIQUE"
+                        }
+                    ]
+                },
+                {
+                    "name": "id_kontrahent",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Kontrahenci (id) "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "numer_faktury",
+                    "type": "VARCHAR"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Kategoria",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Kategoria (nazwa VARCHAR PRIMARY KEY UNIQUE)",
+            "columns": [
+                {
+                    "name": "nazwa",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "UNIQUE",
+                            "definition": "UNIQUE"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Magazyn",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Magazyn (id INTEGER PRIMARY KEY AUTOINCREMENT, id_faktury INTEGER REFERENCES Faktura (id), numer_identyfikacyjny VARCHAR, typ VARCHAR, data DATE)",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "id_faktury",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Faktura (id)"
+                        }
+                    ]
+                },
+                {
+                    "name": "numer_identyfikacyjny",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "typ",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "data",
+                    "type": "DATE"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Produkt",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Produkt (id INTEGER PRIMARY KEY AUTOINCREMENT, nazwa VARCHAR, PKWiU VARCHAR, kategoria VARCHAR REFERENCES Kategoria (nazwa), jednostka VARCHAR REFERENCES Jednostka (nazwa), podatek VARCHAR REFERENCES Podatek (id), ilosc DOUBLE)",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "nazwa",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "PKWiU",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "kategoria",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Kategoria (nazwa)"
+                        }
+                    ]
+                },
+                {
+                    "name": "jednostka",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Jednostka (nazwa)"
+                        }
+                    ]
+                },
+                {
+                    "name": "podatek",
+                    "type": "VARCHAR",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Podatek (id)"
+                        }
+                    ]
+                },
+                {
+                    "name": "ilosc",
+                    "type": "DOUBLE"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Kontrahenci",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Kontrahenci (id INTEGER PRIMARY KEY AUTOINCREMENT, imie VARCHAR, nazwisko VARCHAR, nazwa_firmy VARCHAR, REGON VARCHAR, KRS VARCHAR, NIP VARCHAR, kod_pocztowy VARCHAR, poczta VARCHAR, kraj VARCHAR, wojewodztwo VARCHAR, powiat VARCHAR, miasto VARCHAR, ulica VARCHAR, numer_budynku VARCHAR, numer_lokalu VARCHAR, telefon_stacjonarny VARCHAR, telefon_komorkowy VARCHAR, FAX VARCHAR, email VARCHAR, www VARCHAR, skype VARCHAR, typ BOOLEAN)",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "imie",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "nazwisko",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "nazwa_firmy",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "REGON",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "KRS",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "NIP",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "kod_pocztowy",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "poczta",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "kraj",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "wojewodztwo",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "powiat",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "miasto",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "ulica",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "numer_budynku",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "numer_lokalu",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "telefon_stacjonarny",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "telefon_komorkowy",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "FAX",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "email",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "www",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "skype",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "typ",
+                    "type": "BOOLEAN"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Podatek",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Podatek (id INTEGER PRIMARY KEY AUTOINCREMENT, opis VARCHAR, wartosc INTEGER)",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY AUTOINCREMENT"
+                        }
+                    ]
+                },
+                {
+                    "name": "opis",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "wartosc",
+                    "type": "INTEGER"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Jednostka",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Jednostka (nazwa PRIMARY KEY UNIQUE)",
+            "columns": [
+                {
+                    "name": "nazwa",
+                    "type": "",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "UNIQUE",
+                            "definition": "UNIQUE"
+                        }
+                    ]
+                }
+            ],
+            "rows": [
+            ]
+        }
+    ]
+}

@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class GlownaBaza {
-	
+
 	public static final String DRIVER = "org.sqlite.JDBC";
 	public static final String DB_URL = "jdbc:sqlite:main_database.db";
 
@@ -33,17 +33,30 @@ public class GlownaBaza {
 			e.printStackTrace();
 		}
 
-		createTables();
+		//createTables();
 	}
 
 	public boolean createTables() {
-		String createCzytelnicy = "CREATE TABLE IF NOT EXISTS czytelnicy (id_czytelnika INTEGER PRIMARY KEY AUTOINCREMENT, imie varchar(255), nazwisko varchar(255), pesel int)";
-		String createKsiazki = "CREATE TABLE IF NOT EXISTS ksiazki (id_ksiazki INTEGER PRIMARY KEY AUTOINCREMENT, tytul varchar(255), autor varchar(255))";
-		String createWypozyczenia = "CREATE TABLE IF NOT EXISTS wypozyczenia (id_wypozycz INTEGER PRIMARY KEY AUTOINCREMENT, id_czytelnika int, id_ksiazki int)";
+		//String createKluczeOff = "PRAGMA foreign_keys = off";
+		String createKontrahenci = "CREATE TABLE Kontrahenci (id INTEGER PRIMARY KEY AUTOINCREMENT, imie VARCHAR, nazwisko VARCHAR, nazwa_firmy VARCHAR, REGON VARCHAR, KRS VARCHAR, NIP VARCHAR, kod_pocztowy VARCHAR, poczta VARCHAR, kraj VARCHAR, wojewodztwo VARCHAR, powiat VARCHAR, miasto VARCHAR, ulica VARCHAR, numer_budynku VARCHAR, numer_lokalu VARCHAR, telefon_stacjonarny VARCHAR, telefon_komorkowy VARCHAR, FAX VARCHAR, email VARCHAR, www VARCHAR, skype VARCHAR, typ BOOLEAN)";
+		String createFaktura = "CREATE TABLE Faktura (id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, id_kontrahent INTEGER REFERENCES Kontrahenci (id) NOT NULL, numer_faktury VARCHAR)";
+		String createMagazyn = "CREATE TABLE Magazyn (id INTEGER PRIMARY KEY AUTOINCREMENT, id_faktury INTEGER REFERENCES Faktura (id), numer_identyfikacyjny VARCHAR, typ VARCHAR, data DATE)";
+		String createKategoria = "CREATE TABLE Kategoria (nazwa VARCHAR PRIMARY KEY UNIQUE)";
+		String createJednostka = "CREATE TABLE Jednostka (nazwa PRIMARY KEY UNIQUE)";
+		String createPodatek = "CREATE TABLE Podatek (id INTEGER PRIMARY KEY AUTOINCREMENT, opis VARCHAR, wartosc INTEGER)";
+		String createProdukt = "CREATE TABLE Produkt (id INTEGER PRIMARY KEY AUTOINCREMENT, nazwa VARCHAR, PKWiU VARCHAR, kategoria VARCHAR REFERENCES Kategoria (nazwa), jednostka VARCHAR REFERENCES Jednostka (nazwa), podatek VARCHAR REFERENCES Podatek (id), ilosc DOUBLE)";
+		String createMagazynProdukt = "CREATE TABLE MagazynProdukt (id_magazyn INTEGER REFERENCES Magazyn (id), id_produkt INTEGER REFERENCES Produkt (id), cena DOUBLE, podatek INTEGER, typ VARCHAR)";
+		
 		try {
-			stat.execute(createCzytelnicy);
-			stat.execute(createKsiazki);
-			stat.execute(createWypozyczenia);
+			//stat.execute(createKluczeOff);
+			stat.execute(createKontrahenci);
+			stat.execute(createFaktura);
+			stat.execute(createMagazyn);
+			stat.execute(createKategoria);
+			stat.execute(createJednostka);
+			stat.execute(createPodatek);
+			stat.execute(createProdukt);
+			stat.execute(createMagazynProdukt);
 		} catch (SQLException e) {
 			System.err.println("Blad przy tworzeniu tabeli");
 			e.printStackTrace();
@@ -51,89 +64,24 @@ public class GlownaBaza {
 		}
 		return true;
 	}
-
-	public boolean insertCzytelnik(String imie, String nazwisko, String pesel) {
-		try {
-			PreparedStatement prepStmt = conn
-					.prepareStatement("insert into czytelnicy values (NULL, ?, ?, ?);");
-			prepStmt.setString(1, imie);
-			prepStmt.setString(2, nazwisko);
-			prepStmt.setString(3, pesel);
-			prepStmt.execute();
-		} catch (SQLException e) {
-			System.err.println("Blad przy wstawianiu czytelnika");
-			e.printStackTrace();
-			return false;
-		}
-		return true;
+	
+	public boolean insertKontrahent(Kontrahent kontrahent){
+		  try {
+	            PreparedStatement prepStmt = conn.prepareStatement(
+	                    "insert into Kontrahenci values (NULL, ?, ?, ?);");
+	        //    prepStmt.setString(1, imie);
+	       //     prepStmt.setString(2, nazwisko);
+	        //    prepStmt.setString(3, pesel);
+	        //    prepStmt.execute();
+	        } catch (SQLException e) {
+	            System.err.println("Blad przy wstawianiu czytelnika");
+	            e.printStackTrace();
+	            return false;
+	        }
+	        return true;
 	}
 
-	public boolean insertKsiazka(String tytul, String autor) {
-		try {
-			PreparedStatement prepStmt = conn
-					.prepareStatement("insert into ksiazki values (NULL, ?, ?);");
-			prepStmt.setString(1, tytul);
-			prepStmt.setString(2, autor);
-			prepStmt.execute();
-		} catch (SQLException e) {
-			System.err.println("Blad przy wypozyczaniu");
-			return false;
-		}
-		return true;
-	}
-
-	public boolean insertWypozycz(int idCzytelnik, int idKsiazka) {
-		try {
-			PreparedStatement prepStmt = conn
-					.prepareStatement("insert into wypozyczenia values (NULL, ?, ?);");
-			prepStmt.setInt(1, idCzytelnik);
-			prepStmt.setInt(2, idKsiazka);
-			prepStmt.execute();
-		} catch (SQLException e) {
-			System.err.println("Blad przy wypozyczaniu");
-			return false;
-		}
-		return true;
-	}
-
-	public List<Czytelnik> selectCzytelnicy() {
-		List<Czytelnik> czytelnicy = new LinkedList<Czytelnik>();
-		try {
-			ResultSet result = stat.executeQuery("SELECT * FROM czytelnicy");
-			int id;
-			String imie, nazwisko, pesel;
-			while (result.next()) {
-				id = result.getInt("id_czytelnika");
-				imie = result.getString("imie");
-				nazwisko = result.getString("nazwisko");
-				pesel = result.getString("pesel");
-				czytelnicy.add(new Czytelnik(id, imie, nazwisko, pesel));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		}
-		return czytelnicy;
-	}
-
-	public List<Ksiazka> selectKsiazki() {
-		List<Ksiazka> ksiazki = new LinkedList<Ksiazka>();
-		try {
-			ResultSet result = stat.executeQuery("SELECT * FROM ksiazki");
-			int id;
-			String tytul, autor;
-			while (result.next()) {
-				id = result.getInt("id_ksiazki");
-				tytul = result.getString("tytul");
-				autor = result.getString("autor");
-				ksiazki.add(new Ksiazka(id, tytul, autor));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		}
-		return ksiazki;
-	}
+	
 
 	public void closeConnection() {
 		try {
