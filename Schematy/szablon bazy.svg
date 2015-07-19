@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="32.295cm" height="19.612cm" viewBox="-9.450 -4.387 22.845 15.225"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="1.450" y="-0.800" width="10.155" height="0.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="1.450" y="-0.800" width="10.155" height="0.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="6.527" y="-0.100"  fill="#000000" text-anchor="middle" font-size="0.70" font-family="sans" font-style="normal" font-weight="700">
+Faktura</text>
+<rect x="1.450" y="0.100" width="10.155" height="5.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="1.450" y="0.100" width="10.155" height="5.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="none" stroke-width="0.010" points="1.600,0.600 1.700,0.750 1.800,0.600 1.700,0.450 "/>
+<text x="1.900" y="0.900"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+id</text>
+<text x="8.560" y="0.900"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+auto</text>
+<line x1="1.900" y1="0.980" x2="10.100" y2="0.980" stroke="#000000" stroke-width="0.050" />
+<ellipse cx="1.700" cy="1.400" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="1.900" y="1.700"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+id_kontrahent</text>
+<text x="8.560" y="1.700"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+KO</text>
+<ellipse cx="1.700" cy="2.200" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="1.900" y="2.500"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+typ</text>
+<text x="8.560" y="2.500"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+Boolean</text>
+<ellipse cx="1.700" cy="3.000" rx="0.100" ry="0.100" fill="#000000" stroke="none"  /><text x="1.900" y="3.300"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+data_wystawienia</text>
+<text x="8.560" y="3.300"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+date</text>
+<ellipse cx="1.700" cy="3.800" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="1.900" y="4.100"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+data_zaplacenia</text>
+<text x="8.560" y="4.100"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+date</text>
+<ellipse cx="1.700" cy="4.600" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><rect x="14.000" y="2.950" width="7.845" height="0.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="14.000" y="2.950" width="7.845" height="0.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="17.922" y="3.650"  fill="#000000" text-anchor="middle" font-size="0.70" font-family="sans" font-style="normal" font-weight="700">
+FakturaProdukty</text>
+<rect x="14.000" y="3.850" width="7.845" height="3.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="14.000" y="3.850" width="7.845" height="3.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<ellipse cx="14.250" cy="4.350" rx="0.100" ry="0.100" fill="#000000" stroke="none"  /><text x="14.450" y="4.650"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+id_faktura</text>
+<text x="18.800" y="4.650"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+KO</text>
+<ellipse cx="14.250" cy="5.150" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="14.450" y="5.450"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+id_produkt</text>
+<ellipse cx="14.250" cy="5.950" rx="0.100" ry="0.100" fill="#000000" stroke="none"  /><text x="14.450" y="6.250"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+cena</text>
+<text x="18.800" y="6.250"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+float</text>
+<ellipse cx="14.250" cy="6.750" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="14.450" y="7.050"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+ilosc</text>
+<text x="18.800" y="7.050"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+integer</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="11.605,0.600 12.802,0.600 12.802,4.350 13.513,4.350 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="13.888,4.350 13.388,4.600 13.513,4.350 13.388,4.100 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="13.888,4.350 13.388,4.600 13.513,4.350 13.388,4.100 "/>
+<text x="11.805" y="0.400"  fill="#000000" text-anchor="start" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+1</text>
+<text x="13.800" y="4.150"  fill="#000000" text-anchor="end" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+n</text>
+<rect x="-9.450" y="1.750" width="9.000" height="0.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-9.450" y="1.750" width="9.000" height="0.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="-4.950" y="2.450"  fill="#000000" text-anchor="middle" font-size="0.70" font-family="sans" font-style="normal" font-weight="700">
+Kontrahenci</text>
+<rect x="-9.450" y="2.650" width="9.000" height="2.600" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-9.450" y="2.650" width="9.000" height="2.600" fill="none" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="none" stroke-width="0.010" points="-9.300,3.150 -9.200,3.300 -9.100,3.150 -9.200,3.000 "/>
+<text x="-9.000" y="3.450"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+id</text>
+<text x="-2.725" y="3.450"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+auto</text>
+<line x1="-9.000" y1="3.530" x2="-1.185" y2="3.530" stroke="#000000" stroke-width="0.050" />
+<ellipse cx="-9.200" cy="3.950" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="-9.000" y="4.250"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+nazwa</text>
+<text x="-2.725" y="4.250"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+tekst</text>
+<ellipse cx="-9.200" cy="4.750" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="-9.000" y="5.050"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+//reszta danych</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="-0.450,3.150 0.500,3.150 0.500,1.400 0.963,1.400 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="1.338,1.400 0.838,1.650 0.963,1.400 0.838,1.150 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="1.338,1.400 0.838,1.650 0.963,1.400 0.838,1.150 "/>
+<text x="-0.250" y="2.950"  fill="#000000" text-anchor="start" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+1</text>
+<text x="1.250" y="1.200"  fill="#000000" text-anchor="end" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+n</text>
+<rect x="2.605" y="9.600" width="6.690" height="0.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="2.605" y="9.600" width="6.690" height="0.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="5.950" y="10.300"  fill="#000000" text-anchor="middle" font-size="0.70" font-family="sans" font-style="normal" font-weight="700">
+Produkty</text>
+<rect x="2.605" y="10.500" width="6.690" height="4.200" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="2.605" y="10.500" width="6.690" height="4.200" fill="none" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="none" stroke-width="0.010" points="2.755,11.000 2.855,11.150 2.955,11.000 2.855,10.850 "/>
+<text x="3.055" y="11.300"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+id</text>
+<text x="7.020" y="11.300"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+auto</text>
+<line x1="3.055" y1="11.380" x2="8.560" y2="11.380" stroke="#000000" stroke-width="0.050" />
+<ellipse cx="2.855" cy="11.800" rx="0.100" ry="0.100" fill="#000000" stroke="none"  /><text x="3.055" y="12.100"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+kategoria</text>
+<text x="7.020" y="12.100"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+tekst</text>
+<ellipse cx="2.855" cy="12.600" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="3.055" y="12.900"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+jednostka</text>
+<text x="7.020" y="12.900"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+tekst</text>
+<ellipse cx="2.855" cy="13.400" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="3.055" y="13.700"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+ilość</text>
+<text x="7.020" y="13.700"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+float</text>
+<ellipse cx="2.855" cy="14.200" rx="0.100" ry="0.100" fill="none" stroke="#000000"  stroke-width="0.010" /><text x="3.055" y="14.500"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+cena</text>
+<text x="7.020" y="14.500"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+float</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="2.605,11.000 1.605,11.000 1.605,8.075 22.845,8.075 22.845,5.150 22.332,5.150 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="21.957,5.150 22.457,4.900 22.332,5.150 22.457,5.400 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="21.957,5.150 22.457,4.900 22.332,5.150 22.457,5.400 "/>
+<text x="2.405" y="10.800"  fill="#000000" text-anchor="end" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+1</text>
+<text x="22.045" y="4.950"  fill="#000000" text-anchor="start" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+n</text>
+<rect x="14.600" y="9.750" width="5.150" height="0.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="14.600" y="9.750" width="5.150" height="0.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="17.175" y="10.450"  fill="#000000" text-anchor="middle" font-size="0.70" font-family="sans" font-style="normal" font-weight="700">
+Kategorie</text>
+<rect x="14.600" y="10.650" width="5.150" height="1.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="14.600" y="10.650" width="5.150" height="1.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="none" stroke-width="0.010" points="14.750,11.150 14.850,11.300 14.950,11.150 14.850,11.000 "/>
+<text x="15.050" y="11.450"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+nazwa</text>
+<text x="17.475" y="11.450"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+tekst</text>
+<line x1="15.050" y1="11.530" x2="19.400" y2="11.530" stroke="#000000" stroke-width="0.050" />
+<rect x="14.900" y="13.325" width="6.690" height="0.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="14.900" y="13.325" width="6.690" height="0.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="18.245" y="14.025"  fill="#000000" text-anchor="middle" font-size="0.70" font-family="sans" font-style="normal" font-weight="700">
+Jednostki</text>
+<rect x="14.900" y="14.225" width="6.690" height="1.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="14.900" y="14.225" width="6.690" height="1.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<polygon fill="#000000" stroke="none" stroke-width="0.010" points="15.050,14.725 15.150,14.875 15.250,14.725 15.150,14.575 "/>
+<text x="15.350" y="15.025"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+jednostka</text>
+<text x="19.315" y="15.025"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+tekst</text>
+<line x1="15.350" y1="15.105" x2="21.240" y2="15.105" stroke="#000000" stroke-width="0.050" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="14.900,14.725 12.098,14.725 12.098,12.600 9.782,12.600 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="9.407,12.600 9.907,12.350 9.782,12.600 9.907,12.850 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="9.407,12.600 9.907,12.350 9.782,12.600 9.907,12.850 "/>
+<text x="14.700" y="14.525"  fill="#000000" text-anchor="end" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+1</text>
+<text x="9.495" y="12.400"  fill="#000000" text-anchor="start" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+n</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="14.700,10.875 11.998,10.875 11.998,11.800 9.782,11.800 "/>
+<polygon fill="#000000" stroke="none" stroke-width="0.100" points="9.407,11.800 9.907,11.550 9.782,11.800 9.907,12.050 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="9.407,11.800 9.907,11.550 9.782,11.800 9.907,12.050 "/>
+<text x="14.500" y="10.675"  fill="#000000" text-anchor="end" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+1</text>
+<text x="9.495" y="11.600"  fill="#000000" text-anchor="start" font-size="0.60" font-family="monospace" font-style="normal" font-weight="400">
+n</text>
+<rect x="-8.839" y="-4.337" width="14.850" height="1.900" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="-8.839" y="-4.337" width="14.850" height="1.900" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="-1.414" y="-3.192"  fill="#000000" text-anchor="middle" font-size="0.80" font-family="sans" font-style="normal" font-weight="400">
+Schemat głównej bazy magazynowe v.0.1</text>
+</svg>
