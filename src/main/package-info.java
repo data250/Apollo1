@@ -2,6 +2,7 @@
  * 
  */
 /**
+ * Główna paczka 
  * @author pablo
  *
  */
