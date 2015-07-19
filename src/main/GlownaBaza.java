@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+import Data.Kontrahent;
+
 public class GlownaBaza {
 
 	public static final String DRIVER = "org.sqlite.JDBC";
