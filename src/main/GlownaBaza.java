@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+import Data.Faktura;
 import Data.Kontrahent;
 
 public class GlownaBaza {
@@ -39,7 +40,7 @@ public class GlownaBaza {
 	}
 
 	public boolean createTables() {
-		//String createKluczeOff = "PRAGMA foreign_keys = off";
+		
 		String createKontrahenci = "CREATE TABLE Kontrahenci (id INTEGER PRIMARY KEY AUTOINCREMENT, imie VARCHAR, nazwisko VARCHAR, nazwa_firmy VARCHAR, REGON VARCHAR, KRS VARCHAR, NIP VARCHAR, kod_pocztowy VARCHAR, poczta VARCHAR, kraj VARCHAR, wojewodztwo VARCHAR, powiat VARCHAR, miasto VARCHAR, ulica VARCHAR, numer_budynku VARCHAR, numer_lokalu VARCHAR, telefon_stacjonarny VARCHAR, telefon_komorkowy VARCHAR, FAX VARCHAR, email VARCHAR, www VARCHAR, skype VARCHAR, typ BOOLEAN)";
 		String createFaktura = "CREATE TABLE Faktura (id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, id_kontrahent INTEGER REFERENCES Kontrahenci (id) NOT NULL, numer_faktury VARCHAR)";
 		String createMagazyn = "CREATE TABLE Magazyn (id INTEGER PRIMARY KEY AUTOINCREMENT, id_faktury INTEGER REFERENCES Faktura (id), numer_identyfikacyjny VARCHAR, typ VARCHAR, data DATE)";
@@ -50,7 +51,7 @@ public class GlownaBaza {
 		String createMagazynProdukt = "CREATE TABLE MagazynProdukt (id_magazyn INTEGER REFERENCES Magazyn (id), id_produkt INTEGER REFERENCES Produkt (id), cena DOUBLE, podatek INTEGER, typ VARCHAR)";
 		
 		try {
-			//stat.execute(createKluczeOff);
+		
 			stat.execute(createKontrahenci);
 			stat.execute(createFaktura);
 			stat.execute(createMagazyn);
@@ -71,8 +72,8 @@ public class GlownaBaza {
 		  try {
 	            PreparedStatement prepStmt = conn.prepareStatement(
 	                    "insert into Kontrahenci values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+	            
 	            prepStmt.setString(1, kontrahent.getImie());
-	            //prepStmt.setString(1, kontrahent);
 	            prepStmt.setString(2, kontrahent.getNazwisko());
 	            prepStmt.setString(3, kontrahent.getNazwa_firmy());
 	            prepStmt.setString(4, kontrahent.getREGON());
@@ -95,18 +96,38 @@ public class GlownaBaza {
 	            prepStmt.setString(21, kontrahent.getSkype());
 	            prepStmt.setString(22, Boolean.toString(kontrahent.getTyp()));
 
-
-
-
-
 	        	prepStmt.execute();
 	        } catch (SQLException e) {
-	            System.err.println("Blad przy wstawianiu czytelnika");
+	            System.err.println("Blad przy wstawianiu kontrahenta");
 	            e.printStackTrace();
 	            return false;
 	        }
 	        return true;
 	}
+	public boolean insertFaktura(Faktura faktura){
+	try {
+        PreparedStatement prepStmt = conn.prepareStatement(
+                "insert into Faktura values (NULL, ?, ?, ?, ?, ?, ?, ?, ?);");
+        
+        
+        prepStmt.setString(1, Integer.toString(faktura.getIdKon()) );
+        prepStmt.setString(2, faktura.getNumerFaktury());
+        prepStmt.setString(3, faktura.getDataWystawienia());
+        prepStmt.setString(4, faktura);
+        prepStmt.setString(5, faktura);
+        prepStmt.setString(6, faktura);
+        prepStmt.setString(7, faktura);
+        prepStmt.setString(8, faktura);
+        
+
+    	prepStmt.execute();
+    } catch (SQLException e) {
+        System.err.println("Blad przy wstawianiu kontrahenta");
+        e.printStackTrace();
+        return false;
+    }
+    return true;
+}
 
 	
 

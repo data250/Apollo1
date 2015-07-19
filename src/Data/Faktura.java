@@ -4,7 +4,8 @@ import java.util.GregorianCalendar;
 public class Faktura {
 	
 	private int id;
-	private Kontrahent idKon;
+	//private Kontrahent idKon;
+	private int idKon; //Musi być wymagane 
 	private String numerFaktury;
 	private GregorianCalendar dataWystawienia;
 	private String rodzajZaplaty;
@@ -13,7 +14,7 @@ public class Faktura {
 	private GregorianCalendar dostawaOd;
 	private GregorianCalendar dostawaDo;
 	
-	public Faktura(int id, Kontrahent idKon, String numerFaktury,
+	public Faktura(int id, int idKon, String numerFaktury,
 			GregorianCalendar dataWystawienia, String rodzajZaplaty,
 			GregorianCalendar terminZaplaty, String kontoKsiegowe,
 			GregorianCalendar dostawaOd, GregorianCalendar dostawaDo) {
@@ -99,6 +100,10 @@ public class Faktura {
 
 	public void setDostawaDo(GregorianCalendar dostawaDo) {
 		this.dostawaDo = dostawaDo;
+	}
+	
+	public String idKonToString(){
+		return Integer.toString(id)
 	}
 	
 	
