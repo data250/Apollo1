@@ -27,6 +27,9 @@ public class Kontrahent{
 	private String www;
 	private String skype;
 	
+	public Kontrahent(){
+		
+	}
 	
 	public Kontrahent(int id, boolean typ, String imie, String nazwisko,
 			String nazwa_firmy, String rEGON, String kRS, String nIP,
@@ -73,7 +76,7 @@ public class Kontrahent{
 	}
 
 
-	public boolean isTyp() {
+	public boolean getTyp() {
 		return typ;
 	}
 

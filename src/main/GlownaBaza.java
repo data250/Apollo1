@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
+import Data.Kontrahent;
+
 public class GlownaBaza {
 
 	public static final String DRIVER = "org.sqlite.JDBC";
@@ -68,11 +70,36 @@ public class GlownaBaza {
 	public boolean insertKontrahent(Kontrahent kontrahent){
 		  try {
 	            PreparedStatement prepStmt = conn.prepareStatement(
-	                    "insert into Kontrahenci values (NULL, ?, ?, ?);");
-	        //    prepStmt.setString(1, imie);
-	       //     prepStmt.setString(2, nazwisko);
-	        //    prepStmt.setString(3, pesel);
-	        //    prepStmt.execute();
+	                    "insert into Kontrahenci values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+	            prepStmt.setString(1, kontrahent.getImie());
+	            //prepStmt.setString(1, kontrahent);
+	            prepStmt.setString(2, kontrahent.getNazwisko());
+	            prepStmt.setString(3, kontrahent.getNazwa_firmy());
+	            prepStmt.setString(4, kontrahent.getREGON());
+	            prepStmt.setString(5, kontrahent.getKRS());
+	            prepStmt.setString(6, kontrahent.getNIP());
+	            prepStmt.setString(7, kontrahent.getKod_pocztowy());
+	            prepStmt.setString(8, kontrahent.getPoczta());
+	            prepStmt.setString(9, kontrahent.getKraj());
+	            prepStmt.setString(10, kontrahent.getWojwodztwo());
+	            prepStmt.setString(11, kontrahent.getPowiat());
+	            prepStmt.setString(12, kontrahent.getMiasto());
+	            prepStmt.setString(13, kontrahent.getUlica());
+	            prepStmt.setString(14, kontrahent.getNrBudynku());
+	            prepStmt.setString(15, kontrahent.getNrLokalu());
+	            prepStmt.setString(16, kontrahent.getTelStac());
+	            prepStmt.setString(17, kontrahent.getTelKom());
+	            prepStmt.setString(18, kontrahent.getFax());
+	            prepStmt.setString(19, kontrahent.getEmail());
+	            prepStmt.setString(20, kontrahent.getWww());
+	            prepStmt.setString(21, kontrahent.getSkype());
+	            prepStmt.setString(22, Boolean.toString(kontrahent.getTyp()));
+
+
+
+
+
+	        	prepStmt.execute();
 	        } catch (SQLException e) {
 	            System.err.println("Blad przy wstawianiu czytelnika");
 	            e.printStackTrace();

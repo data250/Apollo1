@@ -1,5 +1,7 @@
 package main;
 
+import Data.Kontrahent;
+
 public class Apollo1 {
 
 	/**
@@ -9,7 +11,9 @@ public class Apollo1 {
 		// TODO Auto-generated method stub
 		System.out.print("DUPA");
 		GlownaBaza baza = new GlownaBaza();
-		baza.createTables();
+		//baza.createTables();
+		Kontrahent kont = new Kontrahent(1, true, "TEST", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+		baza.insertKontrahent(kont);
 		
 
 	}

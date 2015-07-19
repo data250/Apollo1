@@ -9,13 +9,13 @@ public class Faktura {
 	private GregorianCalendar dataWystawienia;
 	private String rodzajZaplaty;
 	private GregorianCalendar terminZaplaty;
-	private String kontoKsiêgowe;
+	private String kontoKsiegowe;
 	private GregorianCalendar dostawaOd;
 	private GregorianCalendar dostawaDo;
 	
 	public Faktura(int id, Kontrahent idKon, String numerFaktury,
 			GregorianCalendar dataWystawienia, String rodzajZaplaty,
-			GregorianCalendar terminZaplaty, String kontoKsiêgowe,
+			GregorianCalendar terminZaplaty, String kontoKsiegowe,
 			GregorianCalendar dostawaOd, GregorianCalendar dostawaDo) {
 		super();
 		this.id = id;
@@ -24,7 +24,7 @@ public class Faktura {
 		this.dataWystawienia = dataWystawienia;
 		this.rodzajZaplaty = rodzajZaplaty;
 		this.terminZaplaty = terminZaplaty;
-		this.kontoKsiêgowe = kontoKsiêgowe;
+		this.kontoKsiegowe = kontoKsiegowe;
 		this.dostawaOd = dostawaOd;
 		this.dostawaDo = dostawaDo;
 	}
@@ -77,12 +77,12 @@ public class Faktura {
 		this.terminZaplaty = terminZaplaty;
 	}
 
-	public String getKontoKsiêgowe() {
-		return kontoKsiêgowe;
+	public String getKontoKsiegowe() {
+		return kontoKsiegowe;
 	}
 
-	public void setKontoKsiêgowe(String kontoKsiêgowe) {
-		this.kontoKsiêgowe = kontoKsiêgowe;
+	public void setKontoKsiegowe(String kontoKsiegowe) {
+		this.kontoKsiegowe = kontoKsiegowe;
 	}
 
 	public GregorianCalendar getDostawaOd() {
